@@ -16,7 +16,7 @@ async function GetDir() {
         let stats = await fsPromises.stat(
           path.join(__dirname, "secret-folder", file.name)
         );
-        let kb = stats.size / 1024;
+        let kb = (stats.size / 1024).toFixed(3);
         stdout.write(`${name} - ${ext}  - ${kb}kb \n`);
       }
     }
